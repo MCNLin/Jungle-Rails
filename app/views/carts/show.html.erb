@@ -4,8 +4,8 @@
     <h1>My Cart</h1>
   </header>
 
-  <div class="panel panel-default items">
   <% if enhanced_cart.length >= 1 %>
+  <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -49,8 +49,8 @@
       </script>
       <% end %>
     <% elsif %>
-      <div><%= @msg %> </div>
-      <%= link_to 'Back to Home Page', root_path , class:'btn btn-primary'%>
+    <div class="alert alert-info" role="alert">
+        <%= @msg %> Click <b><%= link_to 'here', root_path %></b> to continue shopping! =) 
       <% end %>
     </div>
   </div>
