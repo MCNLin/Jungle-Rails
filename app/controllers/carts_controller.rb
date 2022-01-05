@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 
   def show
+    @msg = "Your Cart is Empty!"
   end
 
   def add_item
@@ -16,6 +17,7 @@ class CartsController < ApplicationController
 
     redirect_to :back
   end
+
 
   private
 

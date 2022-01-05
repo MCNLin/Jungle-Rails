@@ -5,6 +5,7 @@
   </header>
 
   <div class="panel panel-default items">
+  <% if enhanced_cart.length >= 1 %>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -15,6 +16,7 @@
         </tr>
       </thead>
       <tbody>
+
         <% enhanced_cart.each do |item| %>
           <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
         <% end %>
@@ -30,21 +32,25 @@
         </tr>
       </tfoot>
     </table>
-  </div>
-
-  <div class="row">
+    </div>
+    
+    <div class="row">
     <div class="col-xs-12">
-      <%= form_tag orders_path do %>
-        <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-amount="<%= cart_subtotal_cents %>"
-          data-name="Jungle"
-          data-description="Khurram Virani's Jungle Order"
-          data-locale="auto"
-          data-email="kvirani@gmail.com"
-          data-currency="cad">
-        </script>
+    <%= form_tag orders_path do %>
+      <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-amount="<%= cart_subtotal_cents %>"
+      data-name="Jungle"
+      data-description="Khurram Virani's Jungle Order"
+      data-locale="auto"
+      data-email="kvirani@gmail.com"
+      data-currency="cad">
+      </script>
+      <% end %>
+    <% elsif %>
+      <div><%= @msg %> </div>
+      <%= link_to 'Back to Home Page', root_path , class:'btn btn-primary'%>
       <% end %>
     </div>
   </div>
