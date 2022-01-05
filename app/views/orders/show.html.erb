@@ -6,6 +6,7 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <h5>Your order details: </h5>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -24,14 +25,15 @@
       <tfoot>
         <tr>
           <th colspan="4">
-            TOTAL:
+            ORDER TOTAL:
           </th>
           <th>
-            <%= humanized_money_with_symbol(cart_subtotal_cents / 100.0) %>
+            <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
     </table>
+    <h5>Email used to place order: <%= @order.email %></h5>
     </div>
   </div>
 
