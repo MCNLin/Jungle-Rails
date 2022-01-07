@@ -7,9 +7,13 @@
 <br></br>
 
 <button class="btn btn-products" type="button">
-<li class="dropdown">
+<%= link_to 'All Categories', [:admin, :categories] %>
+<span class="badge"><%= @category_count %></span>
+</button>
+<button class="btn btn-products" type="button">
+<div class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-All Categories 
+All Categories <span class="caret"></span>
 <span class="badge"><%= @category_count %></span>
 </a>
 <ul class="dropdown-menu">
@@ -17,5 +21,5 @@ All Categories
   <li><%= link_to category.name, category %></li>
   <% end %>
   </ul>
-  </li>
+  </div>
   </button>
