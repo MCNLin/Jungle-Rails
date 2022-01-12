@@ -21,10 +21,13 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     # ACT
     visit root_path
 
+    #VERIFY that there is 10 products
     expect(page).to have_css 'article.product', count: 10
 
+    #look for first article header a (name of product)
     find('article header a', match: :first).click
 
+    #VERIFY css = 'article.product-detail'
     expect(page).to have_css 'article.product-detail'
     
     # DEBUG / VERIFY
