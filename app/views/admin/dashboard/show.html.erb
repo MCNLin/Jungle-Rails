@@ -2,10 +2,10 @@
 <br>
 <div class="jumbotron">
 <p><b>Products</b></p>
-<span>You have <b><%= @product_count %> <%= link_to 'products', [:admin, :products] %></b> in your database.</span>
+<span>You have <b><%= link_to "#{@product_count} products", [:admin, :products] %></b> in your database.</span>
 </div>
 
 <div class="jumbotron">
 <p><b>Categories</b></p>
-<span>You have <b><%= link_to @category_count,[:admin, :categories] %></b> categories in your database.</span>
+<span>You have <b><%= link_to "#{@category_count} categories", [:admin, :categories] %></b> categories in your database.</span>
 </div>
