@@ -1,6 +1,30 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.In order to understand the Rails framework, I added features, corrected problems, and improved the user-interface design of this existing web application.
+
+## Features Implemented
+
+#### Adding new features:
+- User Authentication
+- Sold Out Badge
+- Order Details Page
+- Register Page
+- Category Page
+- Admin Dashboard
+- Admin users can list and create new categories
+
+#### Bug fixes:
+- prevent checking out with an empty cart
+- add basic security for admin access
+- display error message when fields are not inputted - (Register)
+
+#### RSpec Testing:
+- Validations in Product model
+- User validation for Login/Register
+- Home Page and associated links
+- 'Add to Cart' Functionality 
+
+---------------------------------------------------------
 
 ## Additional Steps for Apple M1 Machines
 
@@ -31,3 +55,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+* Rspec-Rails
+* Capybara (intergration testing)
+* Poltergeist (intergration testing)
+* Database cleaner
